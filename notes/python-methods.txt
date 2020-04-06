@@ -1,0 +1,117 @@
+Methods: They are built-in objects. 
+
+Functions: Allow us to create blocks of code that can be easily executed many times, without needing to rewrite to execute same set of tasks.
+return keyword allows assigning o/p of the function to a new variable.
+
+// code
+def add_function(num1, num2): 
+# num1, num2 are called paramters
+    return num1+num2
+
+result = add_function(1,2)
+print(result)
+
+// code
+def dog_check(mystring):
+    return 'dog' in mystring.lower()
+
+PIG LATIN
+
+1. If word starts with a vowel, add 'ay' to the end.
+2. If a word does not start with a vowel, put first letter to the end ad add 'ay' to the end.
+3. word -> ordway
+4. apple -> appleay
+
+Arguments:
+*args -> takes in arbitrary number of arguments.
+Type of args by default is tuple.
+args as a word is an arbitrary choice but can be replaced by different word. This is just by PEP-8 cnvention.
+
+// code
+def myfunc(*args):
+  return sum(args) * 0.05
+  print(args)
+
+myfunc(10, 10, 30)
+o/p: 2.5
+(10, 10, 30)
+
+
+**kwargs (key word arguments) -> Builds dictionary of key and words.
+//code
+
+def myfunc(**kwargs):
+    if 'fruit' in kwargs:
+        print('My fruit of choice is {}'.format(kwargs['fruit']))
+    else:
+        print('I did not find any fruit here')
+
+myfunc(fruit='apple')
+OP: My fruit of hoice is apple.
+
+
+Object oriented Programming:
+
+OOP allows users to create their own objects to write code which is repeatable and organized.
+class for user defined object, defines nature of the feature object. From claases you can create instance of the object.
+Attributes are characteristics of the object.
+self.var is an instance of the class, implicitly defined. 
+
+Syntax:
+
+class NameOfClass(): //also known as camel casing; first letter of word is capital.
+
+// objects also called classes in python
+    def __init__(self, param1, param2):
+        self.param1 = param1 // assigining instance of a class to an attribute of the function
+        self.param2 = param2
+
+// creating instance of the object
+
+    def some_method():
+        print(self.param1)
+
+----
+
+__init__ is a special method which is called upon, everytime, an instance of the class is created.
+
+// code
+
+class Dog():
+
+    def __init__(self, breed): // init is constructor of the class. self is instance of the object. 
+        
+        self.breed = breed
+        # self.breed is an attribute of the class.
+ 
+    def bark(self):
+
+            print("Woof!")
+
+my_dog = Dog(breed = 'Lab')
+my_dog.breed
+my_dig.bark()
+
+Inheritence is a way to define new classes using classes already defined.
+
+Syntax example
+
+class Animal():
+
+    def __init__(self):
+        print("Animal created")
+    
+    def who_am_i(self):
+        print("I am an animal")
+
+class Dog(Animal):
+
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog Created")
+
+my_dog = Dog()
+
+OP: 
+Animal Created
+Dog Created

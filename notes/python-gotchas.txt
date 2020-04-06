@@ -1,0 +1,18 @@
+.join() -> function takes in an interable and joins all the items at once. It is not useful for joining each item, returned out of for loop.
+
+lower(), upper(), islower(), isupper() are not in place function. Meaning, they do return a value.
+
+If an attribute (variable) needs to be called inside of another function in a class object, you have to reference it by self.
+If the parameter is called inside of the same function, it doesn't need to have self.
+
+class Circle():
+
+    pi = 3.14
+
+    def __init__(self, radius):
+        self.radius = radius
+        self.area = radius*radius*Circle.pi
+
+    def get_circum(self):
+        return self.radius * Circle.pi *2
+

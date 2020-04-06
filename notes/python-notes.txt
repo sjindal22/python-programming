@@ -1,0 +1,224 @@
+Data types - int, str, float, boolean
+Data structures - list, dictionary, tuples, sets
+Division (/) gives a float value. (confirm)
+Modulo (%) gives the remainder.
+Power operator (**)
+
+Integers: 
+    Python uses dynamic typing. This means, a variable can be reassigned to a different data type.
+    For example: x = 2 
+                 x = ["a", "b"]
+    This is particularly useful as it saves time and easy to work with but this may result in
+    unexpected data type and then you may need to use type() to debug such issues.
+
+Strings:
+    Python allows strings (ordered sequence of 1 or more characters) to be wrapped around single or
+    double quotes. This gets particularly handy as a wrapper. Meaning, you can enclose a string
+    in single quotes and wrap the entire sentence in double quotes.
+
+    Indexing ([], mainly used for giving a single character) and slicng are used to grab sub sections from the strings.
+
+    Slicing also grabs the sub-section of the string and has the following syntax:
+    [start:stop:end]
+    For example:
+        mystring = 'abcdefghik'
+        mystring[:] -> prints everything
+        mystring[::2] -> 'acegik'
+        mystring[:2] -> 'abc'
+        mystring[::-1] -> prints all the charaters in reverse
+
+    len('string') gives 6
+
+    Strings are immutable. You cannot change/replace the character in the string. {Mutation == change}
+    
+Lists:
+
+These are mutable. Important functions are append, pop, reverse, sort.
+
+sorted(mylist) -> returns sorted list after sorting.
+mylist.sort() -> does in place and does not return the sorted list.
+
+Dictionaries:
+
+These are unordered mappings for storing objects. These cannot be sorted. Useful
+to retrieve values with just the key. Location of keys is unknown.
+List items are retrieved by Location. You can use orderdict for ordering
+items in dictionary.
+
+Tuples:
+They are immutable. Has only count(counts number of an element) 
+and index(first time an elements occurs) methods.
+
+Sets:
+Unordered collection of unique elements. 
+
+Example:
+myset = set()
+myset.add(1)
+myset
+{1}
+
+mylist = [1,1,1,1,2,2,2,2,2]
+set(mylist)
+{1,2}
+
+I/O files:
+myfile.read() -> gives output of all the contents in that file in the form of one giant string. 
+                 This places the cursor at the end of the file.
+                 So, to place the cursor at the beginning of the file, you can use, myfile.seek(0).
+
+myfile.readlines() -> grabs each text line as one element of a list.
+
+myfile.close() -> close the file if it is opened somewhere else.
+
+Code:
+with open('myfile.txt') as my_new_file:
+    content = my_new_file.read()
+print(content)
+
+with open('myfile.txt', mode='a') as f: 
+
+// { 'r' - read, 'w' - write, 'a' - append to the file, 'r+' - read & write and 'w+' -> overwrites existing files or creates a new file}
+
+    f.write('\nNew line')
+
+with open('myfile.txt', mode='r') as f:
+    print(f.read())
+
+
+Python Statement (Iterables):
+
+"for"
+
+// Code
+for _ in mylist: // or some string
+    print('Something repeatable')
+
+# This prints the text until the length of the list or string. This is useful where variable is not used anywhere, 
+and a place holder is needed to iterate over.
+
+"while, break, continue, pass":
+
+// code
+mylist = [1,2,3]
+
+for x in mylist:
+    pass
+# passes the for loop and does nothing
+print("end of script")
+
+O/P: end of script
+
+
+Useful operators:
+
+// Code
+for num in range(10):
+    print num
+
+O/P:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+for num in range(0, 10, 2):
+    print num
+
+O/P:
+0
+2
+4
+6
+8
+
+Enumerate: Does index count in the form of tuples. Saves us from storing objects in the memory. 
+
+// Code
+
+word = 'abcde'
+
+for item in enumerate(word):
+    print item
+
+O/P:
+(0, a)
+(1, b)
+(2, c)
+(3, d)
+(4, e)
+
+for index, letter in enumerate(word):
+    print index, letter
+
+O/P:
+0,a
+1,b
+2,c
+3,d
+4,e
+
+ZIP: It zips items in two or more different lists and iterates over each, giving o/p in the form of tuple. Iterates and print only over the lists
+of the same size and does nothing for the items in list with longer size.
+
+// Code
+mylist1 = [1,2,3]
+mylist2 = [a,b,c]
+
+for items in zip(mylist1, mylist2):
+    print items
+
+O/P:
+(1,a)
+(2,b)
+(3,c)
+
+// Code
+list(zip(mylist1, mylist2))
+
+O/P: [(1,'a'), (2,'b'), (3,'c')]
+
+'a' in 'a world'
+'mykey' in {'mykey':345}
+
+O/P: True
+
+mylistnew = [10,20,30,100]
+min(mylistnew)
+max(mylistnew)
+
+O/P:
+10
+100
+
+
+List Comprehension:
+
+// Code 
+mystring = 'hello'
+mylist = [letter for letter in mystring]
+
+O/P:
+['h', 'e', 'l', 'l', 'o']
+
+mylist = [num**2 for num in range(0,11)]
+mylist
+
+O/P: 
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+mylist = [num**2 for num in range(0,11) if num%2==0]
+mylist
+
+O/P: 
+[0, 4, 16, 36, 64, 100]
+
+mylist = [x*y for x in [2,4,6] for y in [1,10,1000]]
+
+O/P: [2, 20, 2000, 4, 40, 4000, 6, 60, 6000]
