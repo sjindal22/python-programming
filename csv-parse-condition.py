@@ -2,7 +2,6 @@ import csv
 
 def csvParser(file):
 
-  rows = []
   with open(file, 'r') as f:
     csvFile = csv.reader(f, delimiter=",")
     
