@@ -1,3 +1,5 @@
+# Example with sample_input.json file
+
 from json import load as jsonLoad
 
 def parseJson(file):
@@ -11,3 +13,16 @@ def parseJson(file):
 
 
 parseJson("sample_input.json")
+
+print("-----Next example-----")
+# Example with apod.json file
+
+def nasaDataParse(file):
+
+  with open(file, 'r') as f:
+    jsonData = jsonLoad(f)
+
+    return(jsonData["explanation"])
+
+print(nasaDataParse("apod.json"))
+
