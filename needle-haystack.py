@@ -1,3 +1,9 @@
+"""
+1. Start a for loop for the range (len(needle) - len(hay) + 1)
+2. Compare if needle[i:len(needle)+i] == hay
+"""
+
+
 def findNeedle(haystack, needle):
 
   for i in range(len(haystack) - len(needle) + 1):
