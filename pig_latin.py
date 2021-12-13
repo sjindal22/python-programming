@@ -1,3 +1,5 @@
+# Approach 1
+
 def pig_latin(myword):
   split_word = list(myword)
   if split_word[0] not in ['a', 'e', 'i', 'o', 'u']:
@@ -9,6 +11,7 @@ def pig_latin(myword):
 print(pig_latin('word'))
 print(pig_latin('apple'))
 
+# Approach 2
 def ping_latin_2(word):
   first_word = word[0]
   if first_word in 'aeiou':
@@ -18,3 +21,9 @@ def ping_latin_2(word):
 
 print(ping_latin_2('iamshivika'))
 print(ping_latin_2('myword'))
+
+# Approach 3
+words = ['word', 'apple', 'Iam', 'Ian', 'Dorsey']
+vowels = ['a', 'e', 'i', 'o', 'u']
+l1 = " ".join(w+'ay' if w[0] in 'aeiouAEIOU' else (w[1:] + w[0] + 'ay') for w in words)
+print(l1.split())
