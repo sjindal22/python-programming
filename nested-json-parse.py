@@ -30,3 +30,10 @@ json_data = """{
     }
 }"""
 print(parseJson(json_data))
+
+'''
+json.loads -> takes in a native string, byte or array of byte containing json
+documents as a parameter.
+O/P:
+['Alice', 'Bob']
+'''

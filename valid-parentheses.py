@@ -23,4 +23,5 @@ def validParen(s):
 print(validParen("()"))
 print(validParen("()[]{}"))
 print(validParen("([)]"))
+print(validParen(")("))
 
