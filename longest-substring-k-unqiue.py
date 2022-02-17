@@ -75,6 +75,4 @@ k = 3
 
 print(maxLenSubStr(s, k)) 
 
-# This code is contributed by Mohit Kumar 
-
 
