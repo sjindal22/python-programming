@@ -2,23 +2,20 @@ def checkBalancedParans(input_parans):
 
   stack = []
   openParans = list("{([")
-  for item in input_parans:
+  for i in input_parans:
 
-    if item in openParans:
-      stack.append(item)
+    if i in openParans:
+      stack.append(i)
 
     else:
       if not stack:
         return False
-      closeParanChar = stack.pop()
-      if closeParanChar == "{":
-        if item != "}":
+      popped_paren = stack.pop()
+      if i == ")" and popped_paren != "(":
           return False
-      if closeParanChar == "(":
-        if item != ")":
+      elif i == "]" and popped_paren != "[":
           return False
-      if closeParanChar == "[":
-        if item != "]":
+      elif i == "}" and popped_paren != "{":
           return False
   if stack:
     return False
@@ -28,6 +25,8 @@ print(checkBalancedParans("()"))
 print(checkBalancedParans("()[]{}"))
 print(checkBalancedParans("([)]"))
 print(checkBalancedParans("{[]}"))
+print(checkBalancedParans(")("))
+print(checkBalancedParans("))"))
 
 '''
 Balanced paren check is for two checks:
