@@ -23,8 +23,8 @@ Strings:
     For example:
         mystring = 'abcdefghik'
         mystring[:] -> prints everything
-        mystring[::2] -> 'acegik'
-        mystring[:2] -> 'abc'
+        mystring[::2] -> 'acegi'
+        mystring[:2] -> 'ab'
         mystring[::-1] -> prints all the charaters in reverse
 
     len('string') gives 6
