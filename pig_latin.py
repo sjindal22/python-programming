@@ -1,3 +1,8 @@
+'''
+If the word starts with a vowel append ay to the end of the word otherwise     
+add remove and append first letter of the word to the end and then append ay  
+'''
+
 # Approach 1
 
 def pig_latin(myword):
@@ -24,6 +29,5 @@ print(ping_latin_2('myword'))
 
 # Approach 3
 words = ['word', 'apple', 'Iam', 'Ian', 'Dorsey']
-vowels = ['a', 'e', 'i', 'o', 'u']
-l1 = " ".join(w+'ay' if w[0] in 'aeiouAEIOU' else (w[1:] + w[0] + 'ay') for w in words)
-print(l1.split())
+l1 = [w+'ay' if w[0] in 'aeiouAEIOU' else (w[1:] + w[0] + 'ay') for w in words]
+print(l1)

@@ -1,6 +1,8 @@
 def revWordsInString(s):
 
-  s = list(" ".join(i[::-1] for i in ("".join(s[::-1])).split(" ")))
-  return s
+    s = " ".join(w for w in s.split()[::-1])
+    return f'"{s}"'
 
-print(revWordsInString(["t","h","e"," ","s","k","y"," ","i","s"," ","b","l","u","e"]))
+print(revWordsInString(s = "the sky is blue"))
+print(revWordsInString(s = "  hello world  "))
+print(revWordsInString(s = "a good   example"))

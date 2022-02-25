@@ -1,3 +1,5 @@
+import re
+
 # Method 1 - with using another list
 
 def checkIfAscending(s: list) -> bool:
@@ -11,7 +13,6 @@ def checkIfAscending(s: list) -> bool:
             return False
 
     return True
-
 # Method 2 - using an int var (less memory usage)
 
 def checkIfAscending_2(s: list) -> bool:
@@ -20,6 +21,7 @@ def checkIfAscending_2(s: list) -> bool:
     for s in s.split():
         if s.isnumeric() and prev:
             if prev < int(s):
+                prev = int(s)
                 continue
             else:
                 return False
@@ -27,22 +29,46 @@ def checkIfAscending_2(s: list) -> bool:
             prev = int(s)
     return True
 
+# Method 3 - with using another list and some python built-in functions
+
+def checkIfAscending_3(s: list) -> bool:
+
+    s = re.findall('\d+', s)
+    l1 = [int(x) for x in s]
+
+    if sorted(l1) == l1:
+        if len(set(l1)) == len(l1):
+            return True
+        else:
+            return False
+    return False
+
 print(checkIfAscending('1 box has 3 blue 4 red 6 green and 12 yellow marbles'))
 print(checkIfAscending(s = "hello world 5 x 5"))
 print(checkIfAscending(s = "sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"))
 
+print("----")
 print(checkIfAscending_2('1 box has 3 blue 4 red 6 green and 12 yellow marbles'))
 print(checkIfAscending_2(s = "hello world 5 x 5"))
 print(checkIfAscending_2(s = "sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"))
 
+print("----")
+print(checkIfAscending_3('1 box has 3 blue 4 red 6 green and 12 yellow marbles'))
+print(checkIfAscending_3(s = "hello world 5 x 5"))
+print(checkIfAscending_3(s = "sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"))
 '''
 O/P:
 True
 False
 True
+----
 True
 False
+False
+----
 True
+False
+False
 
 If using method 1, the trick is to filter only the digits and compare i+1, 
 whre i is initialized to 0 with the next consecutive number in the list.
