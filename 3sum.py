@@ -2,10 +2,14 @@ from itertools import combinations
 
 def threesum(l1: list) -> list:
 
-    l = []
-    neg = [x for x in l1 if x < 0]
-    pos = [x for x in l1 if x > 0]
-    zero = [x for x in l1 if x == 0]
+    l, neg, pos, zero = [], [], [], []
+    for x in l1:
+        if x < 0:
+            neg.append(x)
+        if x > 0:
+            pos.append(x)
+        if x == 0:
+            zero.append(x)
 
     n = list(set(neg))
     p = list(set(pos))
