@@ -22,7 +22,7 @@ def commonChars(words: list) -> list:
             '''
 
             if i == (len(words) -1):
-                count = list(set(temp.keys() & set(count.keys())))
+                count = list(set(temp.keys()) & set(count.keys()))
 
        #For taking the occurences of the cgaracters that are common
         for x,v in temp.items():
